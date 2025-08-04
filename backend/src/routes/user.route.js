@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { getAdmin } from "../controller/admin.controller.js";
+import { protectRoute } from "../middleware/auth.middleware.js";
+import { getAllUsers } from "../controller/user.controller.js";
 
 const router = Router();
 
-router.get("/", getAdmin);
+router.get("/", protectRoute, getAllUsers);
+// TODO: get messages
 
 export default router;
