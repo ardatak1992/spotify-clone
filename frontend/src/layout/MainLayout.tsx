@@ -1,3 +1,4 @@
+import FriendsActivity from "@/components/FriendsActivity";
 import LeftSidebar from "@/components/LeftSidebar";
 import {
   ResizableHandle,
@@ -30,13 +31,15 @@ const MainLayout = () => {
           <Outlet />
         </ResizablePanel>
 
+        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" /> 
+
         <ResizablePanel
           defaultSize={20}
           minSize={0}
           maxSize={25}
           collapsedSize={0}
         >
-          friends activity
+          <FriendsActivity />
         </ResizablePanel>
       </ResizablePanelGroup>
     </div>
