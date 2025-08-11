@@ -1,3 +1,4 @@
+import AudioPlayer from "@/components/AudioPlayer";
 import FriendsActivity from "@/components/FriendsActivity";
 import LeftSidebar from "@/components/LeftSidebar";
 import {
@@ -15,6 +16,7 @@ const MainLayout = () => {
         direction="horizontal"
         className="flex flex-1 overflow-hidden p-2"
       >
+        <AudioPlayer />
         {/* Left side bar */}
         <ResizablePanel
           defaultSize={20}
