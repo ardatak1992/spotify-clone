@@ -27,7 +27,7 @@ initializeSocket(httpServer);
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL || "http://localhost:3000",
     credentials: true,
   })
 );
@@ -72,6 +72,7 @@ app.use("/api/stats", statRoutes);
 
 if (process.env.NODE_ENV === "production") {
   const frontendPath = path.join(process.cwd(), "frontend", "dist");
+  console.log(frontendPath);
   app.use(express.static(frontendPath));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(frontendPath, "index.html"));
