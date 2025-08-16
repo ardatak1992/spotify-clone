@@ -71,8 +71,8 @@ app.use("/api/albums", albumRoutes);
 app.use("/api/stats", statRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  const frontendPath = path.join(process.cwd(), "frontend", "dist");
-  console.log(frontendPath);
+  const frontendDist = path.resolve(__dirname, "../frontend/dist");
+  console.log("Serving frontend from:", frontendDist);
   app.use(express.static(frontendPath));
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(frontendPath, "index.html"));
