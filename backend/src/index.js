@@ -73,9 +73,9 @@ app.use("/api/stats", statRoutes);
 if (process.env.NODE_ENV === "production") {
   const frontendDist = path.resolve(__dirname, "../frontend/dist");
   console.log("Serving frontend from:", frontendDist);
-  app.use(express.static(frontendPath));
+  app.use(express.static(frontendDist));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(frontendPath, "index.html"));
+    res.sendFile(path.resolve(frontendDist, "index.html"));
   });
 }
 
