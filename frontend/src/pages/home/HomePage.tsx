@@ -45,7 +45,6 @@ function HomePage() {
             Good afternoon
           </h1>
           <FeaturedSection />
-
           <div className="space-y-8">
             <SectionGrid
               title="Made For You"
