@@ -24,9 +24,8 @@ export const initializeSocket = (server) => {
     });
 
     socket.on("update_activity", ({ userId, activity }) => {
-      console.log("activity updated");
       userActivities.set(userId, activity);
-      io.emit("activity_update", { userId, activity });
+      io.emit("activity_updated", { userId, activity });
     });
 
     socket.on("send_message", async (data) => {

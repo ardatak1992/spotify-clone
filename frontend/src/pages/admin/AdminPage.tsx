@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
-import SongsTabContent from "@/components/SongsTabContent";
-import AlbumsTabContent from "@/components/AlbumsTabContent";
+import SongsTabContent from "./components/SongsTabContent";
+import AlbumsTabContent from "./components/AlbumsTabContent";
 import DashboardStats from "@/components/ui/DashboardStats";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuthStore } from "@/stores/useAuthStore";
@@ -10,13 +10,13 @@ import { useEffect } from "react";
 
 const AdminPage = () => {
   const { isAdmin, isLoading } = useAuthStore();
-  const {fetchAlbums, fetchSongs, fetchStats} = useMusicStore()
+  const { fetchAlbums, fetchSongs, fetchStats } = useMusicStore();
 
   useEffect(() => {
-    fetchAlbums()
-    fetchSongs()
-    fetchStats()
-  }, [fetchAlbums, fetchSongs, fetchStats])
+    fetchAlbums();
+    fetchSongs();
+    fetchStats();
+  }, [fetchAlbums, fetchSongs, fetchStats]);
 
   if (!isAdmin && !isLoading) {
     return <div>Unauthorized</div>;

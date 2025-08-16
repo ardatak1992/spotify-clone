@@ -6,9 +6,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./ui/table";
+} from "../../../components/ui/table";
 import { Calendar, Trash2 } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 
 const SongsTable = () => {
   const { songs, isLoading, error, deleteSong } = useMusicStore();

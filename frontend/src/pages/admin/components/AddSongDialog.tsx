@@ -6,18 +6,18 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
-} from "./ui/dialog";
+} from "../../../components/ui/dialog";
 import { DialogTitle, DialogTrigger } from "@radix-ui/react-dialog";
-import { Button } from "./ui/button";
+import { Button } from "../../../components/ui/button";
 import { Plus, Upload } from "lucide-react";
-import { Input } from "./ui/input";
+import { Input } from "../../../components/ui/input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "../../../components/ui/select";
 import toast from "react-hot-toast";
 import { axiosInstance } from "@/lib/axios";
 

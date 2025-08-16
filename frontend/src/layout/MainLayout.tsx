@@ -39,19 +39,20 @@ const MainLayout = () => {
           <LeftSidebar />
         </ResizablePanel>
 
-        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+        <ResizableHandle className="w-2 bg-black rounded transition-colors" />
 
         {/* Main Content */}
-        <ResizablePanel defaultSize={isMobile ? 80 : 60}>
+        <ResizablePanel className="rounded" defaultSize={isMobile ? 80 : 60}>
           <Outlet />
         </ResizablePanel>
 
         {!isMobile && (
           <>
-            <ResizableHandle className="w-2 bg-black rounded-lg transition-colors" />
+            <ResizableHandle className="w-2 bg-black rounded transition-colors" />
 
             <ResizablePanel
               defaultSize={20}
+              className="rounded"
               minSize={0}
               maxSize={25}
               collapsedSize={0}
